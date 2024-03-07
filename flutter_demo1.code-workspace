@@ -1,0 +1,16 @@
+{
+    "folders": [
+      {
+        "name": "(root)",
+        "path": "./"
+      },
+      {
+        "name": "Flutter App",
+        "path": "./app"
+      },
+      {
+        "name": "Web API backend",
+        "path": "./backend"
+      }
+    ]
+  }
