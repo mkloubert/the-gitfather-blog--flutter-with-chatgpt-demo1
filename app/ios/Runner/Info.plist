@@ -45,5 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>we need this for the demo application</string>
+	<key>NSCameraUsageDescription</key>
+	<string>we need this for the demo application</string>
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>

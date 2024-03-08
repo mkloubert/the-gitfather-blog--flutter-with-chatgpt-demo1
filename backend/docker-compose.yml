@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  backend:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    command: sh -c "dotnet watch"
+    env_file:
+      - ./.env
+      - ./.env.local
+    ports:
+      - 5080:5080
+      - 55169:55169
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
