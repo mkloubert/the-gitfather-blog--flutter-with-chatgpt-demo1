@@ -21,7 +21,8 @@
 // SOFTWARE.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/home_screen.dart';
+import 'package:flutter_application_1/widgets/image_recognition_tab.dart';
+import 'package:flutter_application_1/widgets/weather_tab.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,8 +35,37 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(
+                    Icons.sunny,
+                  ),
+                  text: "Weather",
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.image_search,
+                  ),
+                  text: "Image Recognition",
+                ),
+              ],
+            ),
+            title: const Text('ChatGPT Demo App'),
+          ),
+          body: const TabBarView(
+            children: [
+              WeatherTab(),
+              ImageRecognitionTab(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

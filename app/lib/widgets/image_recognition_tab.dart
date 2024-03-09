@@ -30,18 +30,6 @@ import 'package:image/image.dart' as img;
 import 'package:logger/logger.dart';
 import 'package:http/http.dart' as http;
 
-/// The initial basic home screen.
-class HomeScreen extends StatefulWidget {
-  /// Initializes a new instance of this class, with an optional
-  /// and custom [key].
-  const HomeScreen({
-    super.key,
-  });
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
 final buttonStyle = TextButton.styleFrom(
   textStyle: const TextStyle(
     color: Colors.white,
@@ -61,7 +49,18 @@ final logger = Logger(
   level: Level.debug,
 );
 
-class _HomeScreenState extends State<HomeScreen> {
+class ImageRecognitionTab extends StatefulWidget {
+  /// Initializes a new instance of this class, with an optional
+  /// and custom [key].
+  const ImageRecognitionTab({
+    super.key,
+  });
+
+  @override
+  State<ImageRecognitionTab> createState() => _ImageRecognitionTabState();
+}
+
+class _ImageRecognitionTabState extends State<ImageRecognitionTab> {
   final ImagePicker _picker = ImagePicker();
   Uint8List? _imageData;
   late TextEditingController _textController;
@@ -90,13 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body = _buildPage(context);
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("GPT4 Image Demo"),
-      ),
-      body: SafeArea(
-        child: body,
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: body,
     );
   }
 

@@ -24,20 +24,35 @@ using System.Text.Json.Serialization;
 
 namespace ChatApi.Models;
 
-/// <summary>
-/// Stores the data for a request of the chat API.
-/// </summary>
-public class ChatRequestBody
+public class WeatherOptions
 {
     /// <summary>
-    /// The URL to the image (can also be a data URI as well).
+    /// The name of the country the location can be found in.
     /// </summary>
-    [JsonPropertyName("image")]
-    public string? Image { get; set; }
+    [JsonPropertyName("country_name")]
+    public string Country { get; set; }
 
     /// <summary>
-    /// The user message.
+    /// The latitude.
     /// </summary>
-    [JsonPropertyName("prompt")]
-    public string Prompt { get; set; }
+    [JsonPropertyName("latitude")]
+    public float Latitude { get; set; }
+
+    /// <summary>
+    /// The official name of the location.
+    /// </summary>
+    [JsonPropertyName("location_name")]
+    public string Location { get; set; }
+
+    /// <summary>
+    /// The longitude.
+    /// </summary>
+    [JsonPropertyName("longitude")]
+    public float Longitude { get; set; }
+
+    /// <summary>
+    /// The postcode of the location.
+    /// </summary>
+    [JsonPropertyName("postcode")]
+    public string Postcode { get; set; }
 }

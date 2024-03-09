@@ -25,18 +25,12 @@ using System.Text.Json.Serialization;
 namespace ChatApi.Models;
 
 /// <summary>
-/// Stores the data for a request of the chat API.
+/// Stores the data for a request of the weather API.
 /// </summary>
-public class ChatRequestBody
+public class WeatherRequestBody
 {
     /// <summary>
-    /// The URL to the image (can also be a data URI as well).
-    /// </summary>
-    [JsonPropertyName("image")]
-    public string? Image { get; set; }
-
-    /// <summary>
-    /// The user message.
+    /// The user message / prompt.
     /// </summary>
     [JsonPropertyName("prompt")]
     public string Prompt { get; set; }
